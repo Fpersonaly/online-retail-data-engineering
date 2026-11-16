@@ -83,7 +83,31 @@ df.to_csv(
 
 
 # ==========================================
-# 7. VALIDASI HASIL
+# 7. LAPORAN KLASIFIKASI TRANSAKSI
+# ==========================================
+
+print("\n=== TRANSACTION CLASSIFICATION REPORT ===")
+
+print("Total records after deduplication:", len(df))
+
+print("Cancellation transactions:",
+      df["IsCancellation"].sum())
+
+print("Stock adjustment transactions:",
+      df["IsStockAdjustment"].sum())
+
+print("Accounting adjustment transactions:",
+      df["IsAccountingAdjustment"].sum())
+
+print("Normal sales transactions:",
+      len(normal_sales))
+
+print("Records excluded from normal sales:",
+      len(df) - len(normal_sales))
+
+
+# ==========================================
+# 8. VALIDASI HASIL
 # ==========================================
 
 print("\n=== HASIL DATA CLEANING ===")
